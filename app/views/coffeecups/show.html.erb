@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+ <img style="float:left" src="<%= @coffeecup.img %>">
+
+  <h1><a href="<%= @coffeecup.url %>"><%= @coffeecup.title %></a></h1>(<%= link_to 'Edit', edit_coffeecup_path(@coffeecup) %>)
+
+<p>
+  <b>Short:</b>
+  <%= @coffeecup.short %>
+</p>
+
+<p>
+  <b>About:</b>
+  <%= @coffeecup.about %>
+</p>
+
+<%= link_to 'Back', coffeecups_path %>
