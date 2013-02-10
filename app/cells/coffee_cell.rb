@@ -12,7 +12,7 @@ class CoffeeCell < Cell::Rails
     render
   end
   def recommended
-  	#TODO add stars and awesome algoritm to recomend apps
+  	#TODO add stars and awesome algorithm to recomend apps
   	@coffeecups = Coffeecup.find(:all, :order => "id desc", :limit => 3)
     render
   end
