@@ -15,8 +15,13 @@ class User < ActiveRecord::Base
 	  #  https://github.com/plataformatec/devise/wiki/OmniAuth:-Overview
 	  #  because we're intending to use OmniAuth only, so
 	  #  presumably don't need a password.
-	  User.find_by_email( user_info["email"] ) ||
-	  User.create( :email => user_info["email"]).save(:validate => false)
+    #debugger
+	  user = User.find_by_email( user_info["email"] ) || User.create( :email => user_info["email"] )
+    #nickupdate
+    user.image = user_info["image"]
+    user.username = user_info["nickname"]
+    user.save(:validate => false)
+    user
 
   end
   has_many :coffeecups

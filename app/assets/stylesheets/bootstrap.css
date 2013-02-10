@@ -6076,3 +6076,11 @@ padding:20px;
   padding:5px;
 
 }
+.github_image {
+  width:32px;
+  height:32px;
+  float:left;
+  margin-top: 4px;
+  border-radius: 5px;
+
+}
