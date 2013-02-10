@@ -1,0 +1,20 @@
+<h2>Top Rated </h2>
+<div class="row-fluid">
+            <ul class="thumbnails">
+<% @coffeecups.each do |coffeecup| %>
+              <li class="span4">
+                <div class="thumbnail">
+                  <img style="float:left;padding 5px"  src="<%= coffeecup.img %>">
+                  <div class="caption" >
+                    <h4 ><%= coffeecup.title %></h4>
+                    <p><%= coffeecup.short %></p>
+                    <p><a href="#" class="btn btn-primary">Demo</a> <a href="#" class="btn">About</a></p>
+                  </div>
+                </div>
+              </li>
+              <% end %>        
+             
+              
+            </ul>
+
+          </div>
