@@ -2,7 +2,6 @@ class CoffeecupsController < ApplicationController
 
   def index
     @coffeecups = current_user.coffeecups
-    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @coffeecups }
@@ -29,7 +28,7 @@ class CoffeecupsController < ApplicationController
   end
 
   def edit
-    @coffeecup = Coffeecup.find(params[:id])
+    @coffeecup = current_user.coffeecups.find(params[:id])
   end
 
 
@@ -48,7 +47,7 @@ class CoffeecupsController < ApplicationController
   end
 
   def update
-    @coffeecup = Coffeecup.find(params[:id])
+    @coffeecup = current_user.coffeecups.find(params[:id])
 
     respond_to do |format|
       if @coffeecup.update_attributes(params[:coffeecup])
@@ -62,7 +61,7 @@ class CoffeecupsController < ApplicationController
   end
 
   def destroy
-    @coffeecup = Coffeecup.find(params[:id])
+    @coffeecup = current_user.coffeecups.find(params[:id])
     @coffeecup.destroy
 
     respond_to do |format|

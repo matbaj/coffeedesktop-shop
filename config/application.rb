@@ -9,6 +9,9 @@ if defined?(Bundler)
   # Bundler.require(:default, :assets, Rails.env)
 end
 
+Squash::Ruby.configure :api_host => 'http://squash.coffeedesktop.com', :api_key => ENV['SQUASH_API']
+
+
 module CoffeedesktopShop
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
